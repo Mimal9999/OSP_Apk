@@ -7,6 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+/*
+ * 
+select z.data, z.km, .... p.imie, p.nazwisko
+from `zgloszenie_pracownicy` z
+JOIN pracownicy p
+ON z.id_kierowcy = p.id
+*/
+
+
 namespace OSP_Apk
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -59,6 +68,9 @@ namespace OSP_Apk
         }
         void readData()
         {
+            // List<workers> =  dataAccess.GetAllWorkers();
+            // worker somebody = = dataAccess.GetWorkerById(1);
+            
             string connectionString = "server=192.168.0.52;database=test1;uid=test1;pwd=;";
             query = "SELECT * FROM `pracownicy`";
             string selectQuery = query;
