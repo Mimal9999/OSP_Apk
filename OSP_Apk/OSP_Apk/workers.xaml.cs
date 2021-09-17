@@ -25,7 +25,7 @@ namespace OSP_Apk
         {
             InitializeComponent();
             query = "SELECT * FROM `pracownicy`";
-            readData();
+            readWorkersData();
 
         }
 
