@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OSP_Apk.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Grid
+        Margin="0,0,0,0"
+        Padding="0,0,0,0"
+        ColumnSpacing="0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--<Frame
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="Blue" />
+        <Frame
+            Grid.Row="1"
+            Grid.Column="0"
+            BackgroundColor="Green" />
+        <Frame
+            Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="Yellow" />
+        <Frame
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="Purple" />
+        <Frame
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="Pink" />
+        <Frame
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="Aqua" />-->
+        <Image Grid.Column="1" BackgroundColor="#ebebeb" />
+        <Image Grid.Column="0" BackgroundColor="#FF6100" />
+        <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            BackgroundColor="#5B6366" />
+        <StackLayout
+            Grid.Row="1"
+            Grid.Column="0"
+            Orientation="Vertical"
+            Spacing="0">
+            <Rectangle
+                x:Name="recBtn1"
+                BackgroundColor="#FF6100"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn2"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn3"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn4"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+        </StackLayout>
+        <StackLayout
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            HorizontalOptions="End"
+            Orientation="Vertical"
+            Spacing="0"
+            VerticalOptions="StartAndExpand">
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_1"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="homepage"
+                Text="STRONA GŁÓWNA"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="add"
+                Text="DODAJ ZGŁOSZENIE"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_2"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="pending"
+                Text="Historia"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_3"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="account"
+                Text="Pracownicy"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+        </StackLayout>
+
+        <!--  ^^^PRZYCISKI Z BOKU^^^  -->
+        <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Aspect="AspectFill"
+            HeightRequest="1000"
+            HorizontalOptions="CenterAndExpand"
+            Scale="1"
+            Source="fire2"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="1179" />
+        <!--  LOGO DUZE  -->
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,0,0,0"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="OSP Brzezia Łąka"
+            TextColor="#5B6366"
+            VerticalOptions="Center" />
+        <!--  NAPIS NA GORZE  -->
+        <StackLayout Grid.Column="1" Orientation="Horizontal">
+            <Image Margin="30,0,0,0" Source="homepage" />
+            <Label
+                Margin="10,0,0,0"
+                FontAttributes="Bold"
+                FontSize="40"
+                HorizontalOptions="Start"
+                Text="STRONA GŁÓWNA"
+                TextColor="#FF6100"
+                VerticalOptions="Center" />
+
+        </StackLayout>
+        <StackLayout
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,30,50,0"
+            HorizontalOptions="EndAndExpand"
+            Spacing="-10"
+            VerticalOptions="EndAndExpand">
+            <Label
+                x:Name="time1"
+                FontAttributes="Bold"
+                FontSize="110"
+                HorizontalOptions="Center"
+                Opacity=".9"
+                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:HH:mm}'}"
+                TextColor="#F24A02" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="50"
+                HorizontalOptions="Center"
+                Opacity=".9"
+                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:dd MMMM yyyy}'}"
+                TextColor="#F24A02" />
+            <Label
+                Margin="0,25,0,0"
+                FontAttributes="Bold"
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+                Opacity=".9"
+                Text="Liczba zgłoszeń dzisiaj: 0"
+                TextColor="#F24A02" />
+        </StackLayout>
+
+        <!--  ^^^DATA GODZINA ZGLOSZENIA^^  -->
+
+
+    </Grid>
+
+</ContentPage>

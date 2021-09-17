@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OSP_Apk.addNew"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid
+        Margin="0,0,0,0"
+        Padding="0,0,0,0"
+        ColumnSpacing="0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--<Frame
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="Blue" />
+        <Frame
+            Grid.Row="1"
+            Grid.Column="0"
+            BackgroundColor="Green" />
+        <Frame
+            Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="Yellow" />
+        <Frame
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="Purple" />
+        <Frame
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="Pink" />
+        <Frame
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="Aqua" />-->
+        <Image Grid.Column="1" BackgroundColor="#ebebeb" />
+        <Image Grid.Column="0" BackgroundColor="#FF6100" />
+        <Image
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="#d9d9d9" />
+        <Image
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="#d9d9d9" />
+        <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            BackgroundColor="#5B6366" />
+        <StackLayout
+            Grid.Row="1"
+            Grid.Column="0"
+            Orientation="Vertical"
+            Spacing="0">
+            <Rectangle
+                x:Name="recBtn1"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn2"
+                BackgroundColor="#FF6100"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn3"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+            <Rectangle
+                x:Name="recBtn4"
+                BackgroundColor="#2E2E2D"
+                HeightRequest="68"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                WidthRequest="10" />
+        </StackLayout>
+        <StackLayout
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            HorizontalOptions="End"
+            Orientation="Vertical"
+            Spacing="0"
+            VerticalOptions="StartAndExpand">
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_1"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="homepage"
+                Text="STRONA GŁÓWNA"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="add"
+                Text="DODAJ ZGŁOSZENIE"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_2"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="pending"
+                Text="Historia"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+            <Button
+                BackgroundColor="#2E2E2D"
+                Clicked="Button_Clicked_3"
+                ContentLayout="left,0"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="68"
+                ImageSource="account"
+                Text="Pracownicy"
+                TextColor="#F24A02"
+                WidthRequest="290" />
+        </StackLayout>
+
+        <!--  ^^^PRZYCISKI Z BOKU^^^  -->
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,0,0,0"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="OSP Brzezia Łąka"
+            TextColor="#5B6366"
+            VerticalOptions="Center" />
+        <!--  NAPIS NA GORZE  -->
+        <StackLayout Grid.Column="1" Orientation="Horizontal">
+            <Image Margin="30,0,0,0" Source="add" />
+            <Label
+                Margin="10,0,0,0"
+                FontAttributes="Bold"
+                FontSize="40"
+                HorizontalOptions="Start"
+                Text="DODAJ ZGŁOSZENIE"
+                TextColor="#FF6100"
+                VerticalOptions="Center" />
+
+        </StackLayout>
+        <ScrollView
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="Start" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Data:" />
+                        <DatePicker
+                            x:Name="data"
+                            Margin="0,15,0,0"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Nazwisko dowódcy:" />
+                        <Picker
+                            x:Name="dowodca"
+                            Margin="0,15,0,0"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Nazwisko kierowcy:" />
+                        <Picker
+                            x:Name="kierowca"
+                            Margin="0,15,0,0"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Cel jazdy:" />
+                        <Entry
+                            x:Name="cel"
+                            Margin="0,15,0,0"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Skąd:" />
+                        <Entry
+                            x:Name="skad"
+                            Margin="0,15,0,0"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Dokąd:" />
+                        <Entry
+                            x:Name="dokad"
+                            Margin="0,15,0,0"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Godzina wyjazdu:" />
+                        <TimePicker
+                            x:Name="godzina_wyjazdu"
+                            Margin="0,15,0,0"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Licznik (wyjazd):" />
+                        <Entry
+                            x:Name="licznik_wyjazd"
+                            Margin="0,15,0,0"
+                            Keyboard="Numeric"
+                            MaxLength="256"
+                            TextChanged="licznik_wyjazd_TextChanged"
+                            WidthRequest="200" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HorizontalOptions="End" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Godzina przyjazdu:" />
+                        <TimePicker
+                            x:Name="godzina_przyjazdu"
+                            Margin="0,15,0,0"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Licznik (przyjazd):" />
+                        <Entry
+                            x:Name="licznik_przyjazd"
+                            Margin="0,15,0,0"
+                            Keyboard="Numeric"
+                            MaxLength="256"
+                            TextChanged="licznik_przyjazd_TextChanged"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Przejechano (km):" />
+                        <Entry
+                            x:Name="przejechano"
+                            Margin="0,15,0,0"
+                            Keyboard="Numeric"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Silnik postój (min):" />
+                        <Entry
+                            x:Name="postoj"
+                            Margin="0,15,0,0"
+                            Keyboard="Numeric"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                            Margin="40,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            Text="Autopompa (min):" />
+                        <Entry
+                            x:Name="autopompa"
+                            Margin="0,15,0,0"
+                            Keyboard="Numeric"
+                            MaxLength="256"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <Button
+                        Margin="240,180,0,0"
+                        BackgroundColor="#2E2E2D"
+                        Clicked="Button_Clicked_4"
+                        ContentLayout="left,0"
+                        CornerRadius="0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HeightRequest="68"
+                        HorizontalOptions="Center"
+                        ImageSource="accept"
+                        Text="Zatwierdź"
+                        TextColor="#F24A02"
+                        WidthRequest="200" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
