@@ -68,7 +68,7 @@ namespace OSP_Apk
         {
             App.Current.MainPage = new addWorker();
         }
-        void readData()
+        void readWorkersData()
         {
             string connectionString = "server=192.168.0.52;database=test1;uid=test1;pwd=;";
             string selectQuery = query;
